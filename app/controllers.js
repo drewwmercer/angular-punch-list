@@ -1,5 +1,21 @@
 'use strict';
 
-angular.module('punchlistApp.comtroller', []).controller('punchlistController', ["$scope", function($scope){
-    $scope.helloWorld = "Hello World!";
-}]);
+angular
+  .module('punchlistApp.controller', [])
+  .controller('punchlistController', [
+    "$scope",
+    function($scope) {
+      $scope.newTask = '';
+
+      $scope.taskList = [
+        { description: 'Tighten bracket - upstairs bonus', done: false },
+        { description: 'Fix nail pops - upstairs bonus', done: false },
+        { description: 'Re-grout tile - upstairs bonus', done: false }
+      ];
+
+      $scope.addPunch = function() {
+          $scope.tasklist.push({description: $scope.newTask, done:false});
+          $scope.newTask = "";
+      }
+    }
+  ]);
