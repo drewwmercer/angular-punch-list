@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('punchlistApp',['punchlistApp.controller']);
+angular.module('punchlistApp',['punchlistApp.controller','ngAnimate']);
