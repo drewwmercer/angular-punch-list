@@ -14,12 +14,12 @@ angular
       ];
 
       $scope.addPunch = function() {
-          $scope.tasklist.push({description: $scope.newTask, done:false});
+          $scope.taskList.push({description: $scope.newTask, done:false});
           $scope.newTask = "";
       };
 
       $scope.deletePunch = function(index) {
-        $scope.tasklist.splice(index, 1);
+        $scope.taskList.splice(index, 1);
       };
     }
   ]);

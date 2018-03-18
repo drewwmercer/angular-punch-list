@@ -1,1 +1,4 @@
 /* app css stylesheet */
+#taskList .strike {
+    text-decoration: line-through;
+}

@@ -23,7 +23,7 @@
 
   <div id="taskList">
     <div ng-repeat="task in taskList">
-      <label class="description">
+      <label class="description" ng-class="{strike: task.done}">
         <input type="checkbox" ng-model="task.done" /> {{task.description}}
       </label>
       <button ng-click="deletePunch($index)">Remove</button>
