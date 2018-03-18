@@ -32,3 +32,7 @@
     cursor: pointer;
     background-color: gray;
 }
+
+#clearTasks {
+    float: right;
+}
