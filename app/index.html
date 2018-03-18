@@ -29,11 +29,11 @@
       <br/>
 
       <div id="taskList" class="list-group">
-        <div ng-repeat="task in taskList">
+        <div ng-repeat="task in taskList" class="list-group-item">
           <label class="description" ng-class="{strike: task.done}">
             <input type="checkbox" ng-model="task.done" /> {{task.description}}
           </label>
-          <button ng-click="deletePunch($index)">Remove</button>
+          <button ng-click="deletePunch($index)" class="btn btn-warning btn-xs">Remove</button>
         </div>
       </div>
     </div>
