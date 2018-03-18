@@ -36,6 +36,11 @@
           <button ng-click="deletePunch($index)" class="btn btn-warning btn-xs">Remove</button>
         </div>
       </div>
+      <span id="punch-count">
+        <h4>{{pendingCount}}
+          <ng-pluralize count="pendingCount" when="{one: 'item left', other: 'items left'}"></ng-pluralize>
+        </h4>
+      </span>
     </div>
   </div>
 
