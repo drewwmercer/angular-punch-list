@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,23 @@
   <title>Punch List App</title>
   <link rel="stylesheet" type="text/css" href="app.css">
 </head>
+
 <body ng-app="punchlistApp" ng-controller="punchlistController">
-  <input type="text" ng-model="newTask"/>
+  
+  <h1>What to do next?</h1>
+
+  <form ng-submit="addPunch()">
+    <div>
+      <input type="text" ng-model="newTask" />
+      <button type="submit">Add Punchlist Item</button>
+    </div>
+  </form>
   <br/>
 
   <div id="taskList">
     <div ng-repeat="task in taskList">
       <label class="description">
-        <input type="checkbox" ng-model="task.done"/>
-        {{task.description}}
+        <input type="checkbox" ng-model="task.done" /> {{task.description}}
       </label>
     </div>
   </div>
@@ -24,4 +33,5 @@
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="controllers.js"></script>
 </body>
+
 </html>
