@@ -3,9 +3,11 @@
 angular
   .module('punchlistApp.controller', [])
   .controller('punchlistController', [
-    "$scope",
-    function($scope) {
+    "$scope", "$filter",
+    function($scope, $filter) {
       $scope.newTask = '';
+
+      $scope.pendingCount = 3;
 
       $scope.taskList = [
         { description: 'Tighten bracket - upstairs bonus', done: false },
@@ -21,5 +23,9 @@ angular
       $scope.deletePunch = function(index) {
         $scope.taskList.splice(index, 1);
       };
+
+      $scope.$watch('taskList', function() {
+        $scope.pendingCount = $filter('filter')($scope.taskList, {done: false}).length;
+      }, true)
     }
   ]);
