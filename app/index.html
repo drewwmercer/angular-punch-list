@@ -7,28 +7,38 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Punch List App</title>
   <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 
-<body ng-app="punchlistApp" ng-controller="punchlistController">
-  
-  <h1>What to do next?</h1>
+<body ng-app="punchlistApp" ng-controller="punchlistController" class="container">
 
-  <form ng-submit="addPunch()">
-    <div>
-      <input type="text" ng-model="newTask" />
-      <button type="submit">Add Punchlist Item</button>
-    </div>
-  </form>
-  <br/>
+  <div class="row-fluid">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="jumbotron">
+        <h1>What to do next?</h1>
 
-  <div id="taskList">
-    <div ng-repeat="task in taskList">
-      <label class="description" ng-class="{strike: task.done}">
-        <input type="checkbox" ng-model="task.done" /> {{task.description}}
-      </label>
-      <button ng-click="deletePunch($index)">Remove</button>
+        <form ng-submit="addPunch()">
+          <div class="input-group input-group-lg">
+            <input type="text" ng-model="newTask" class="form-control input-lg" />
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default btn-lg">Add Punchlist Item</button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <br/>
+
+      <div id="taskList" class="list-group">
+        <div ng-repeat="task in taskList">
+          <label class="description" ng-class="{strike: task.done}">
+            <input type="checkbox" ng-model="task.done" /> {{task.description}}
+          </label>
+          <button ng-click="deletePunch($index)">Remove</button>
+        </div>
+      </div>
     </div>
   </div>
+
 
   <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="app.js"></script>
